@@ -13,10 +13,13 @@ public:
 
     bool check(Circle other) {
     double d=sqrt(pow(x-other.x,2)+pow(y-other.y,2));
-if (d<=abs(radius-other.radius)){
+
+ if(d==abs(radius-other.radius)){
     return true;
 }
-
+    else if (d<radius+other.radius && d>abs(radius-other.radius)){
+        return true;
+    }
 else if (d==radius+other.radius) {
     return true;
 }
